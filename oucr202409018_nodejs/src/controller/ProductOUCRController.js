@@ -15,6 +15,7 @@ exports.getProductById = async(req, res) =>{
         if (!products) {
             return res.status(404).json({error:'no se encontro al product'});
         }
+        res.json(products);
     } catch (error) {
         res.status(500).json({error:'error al obtener'});
     }
@@ -47,11 +48,11 @@ exports.updateProduct = async(req, res) =>{
 
 exports.deleteProduct = async(req, res) =>{
     try {
-        const deleteProduct =  await ProductOUCR.findByIdAndRemove(req.params.id);
+        const deleteProduct =  await ProductOUCR.findByIdAndDelete(req.params.id);
         if (!deleteProduct) {
             return res.status(404).json({error: ' no se encontro'});
         }
-        return res.json({message: 'no se puedo eliminar'});
+        return res.json({message: ' se puedo eliminar'});
     } catch (error) {
         res.status(500).json({error:'no se elimino'});
     }

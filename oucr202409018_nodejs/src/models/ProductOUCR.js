@@ -6,4 +6,4 @@ const ProductOUCRSchema = new mongoose.Schema({
     PrecioOUCR: {type: Number, required:true}
 })
 
-module.exports = mongoose.model('productoucrs', ProductOUCRSchema);
+module.exports = mongoose.model('ProductOUCR', ProductOUCRSchema);
